@@ -1,224 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SolidBuild Engineering</title>
-  
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  
-  <!-- Animate On Scroll -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISAAC ENGINEERING LIMITED</title>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./CSS/style.css"/>
-</head>
-<body>
+    <!-- Bootstrap & FontAwesome -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">SolidBuild</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Custom Styling -->
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
 
-<!-- Hero Section -->
-<header class="hero text-white text-center d-flex align-items-center justify-content-center">
-  <div class="container" data-aos="fade-up">
-    <h1 class="display-4 fw-bold">Engineering Tomorrow, Today.</h1>
-    <p class="lead">We design, build, and deliver sustainable engineering solutions.</p>
-    <a href="#contact" class="btn btn-primary btn-lg mt-3">Get a Quote</a>
-  </div>
-</header>
+      .navbar-brand img {
+        height: 50px;
+        margin-right: 10px;
+      }
 
-<!-- About Section -->
-<section id="about" class="py-5">
-  <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-4">Who We Are</h2>
-    <p class="lead">SolidBuild Engineering is a forward-thinking company delivering cutting-edge solutions in civil, structural, and industrial engineering. With over a decade of experience, we bring innovation and reliability to every project.</p>
-  </div>
-</section>
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+          url("./images/hero\ section.png") no-repeat center center/cover;
+        height: 90vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        text-align: left;
+        padding: 0 100px;
+      }
 
-<!-- Services Section -->
-<!-- Services Section -->
-<section id="services" class="py-5 bg-light">
-  <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-5">Our Core Services</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow h-100 service-card">
-          <div class="card-body">
-            <i class="fas fa-road fa-3x mb-3 text-primary"></i>
-            <h5 class="card-title">Civil Engineering</h5>
-            <p class="card-text">Urban planning, bridgework, drainage systems, and sustainable road development.</p>
-            <a href="services.html#civil" class="btn btn-outline-primary mt-2">Learn More</a>
+      .hero h1 {
+        font-size: 3rem;
+        font-weight: semi-bold;
+      }
+      .hero p {
+        font-style: italic;
+      }
+      @media (max-width: 1000px) {
+        .hero {
+          justify-content: center;
+          text-align: center;
+          padding: 0 20px;
+        }
+        .hero h1 {
+          font-size: 2rem;
+          font-weight: semi-bold;
+        }
+      }
+      .btn-green {
+        background-color: #28a745;
+        color: white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .btn-green:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        color: white;
+      }
+      /* Nav underline animation */
+      .nav-underline {
+        position: relative;
+        display: inline-block;
+        color: #000;
+        transition: color 0.3s ease;
+      }
+
+      .nav-underline::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background-color: #28a745;
+        transition: width 0.3s ease;
+      }
+
+      .nav-underline:hover::after {
+        width: 100%;
+      }
+
+      /* Glow button on hover */
+      .btn-green-glow {
+        background-color: #28a745;
+        color: white;
+        transition: all 0.3s ease-in-out;
+        box-shadow: none;
+      }
+
+      .btn-green-glow:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px rgba(40, 167, 69, 0.6);
+        color: white;
+      }
+
+      .card i {
+        font-size: 2.5rem;
+        color: #28a745;
+      }
+      #services {
+        background-color: #0d1b2a;
+      }
+      #services h2 {
+        color: white;
+      }
+      .project-card img {
+        height: 180px;
+        object-fit: cover;
+      }
+      .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      }
+
+      footer {
+        background-color: #0d1b2a;
+        color: white;
+        padding: 40px 0;
+      }
+
+      footer a {
+        color: #ccc;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #28a745;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sticky Responsive Navbar with Animation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
+    >
+      <div class="container">
+        <!-- Logo & Business Name -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="images/isaac project logo.jpeg"
+            alt="logo"
+            height="40"
+            class="me-2"
+          />
+          <span class="fw-bold fs-6">ISAAC ENGINEERING LIMITED</span>
+        </a>
+
+        <!-- Hamburger Toggle -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-underline" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-underline" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-underline" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-underline" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div>
+        <h1>Innovative Solutions, Proven Success</h1>
+        <p class="lead">Trusted in Infrastructure Development & Engineering</p>
+        <a href="#about" class="btn btn-green mt-3">READ MORE</a>
+      </div>
+    </section>
+    <!-- About Section -->
+    <section class="py-5" id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Text on the Left -->
+          <div class="col-md-6">
+            <h2 class="fw-bold">About Us</h2>
+            <p>
+              <strong>ISAAC ENGINEERING LIMITED</strong> is a trusted civil and
+              structural engineering company that provides expert services in
+              road construction, erosion control, drainage systems, land
+              reclamation, and much more. <br /><br />We are committed to
+              excellence, reliability, and innovation in every project we handle
+              across Delta State and beyond.
+            </p>
+          </div>
+
+          <!-- Image on the Right -->
+          <div class="col-md-6 text-center">
+            <img
+              src="images/about image.jpg"
+              class="img-fluid rounded shadow"
+              style="max-width: 50%"
+              alt="About Isaac Engineering"
+            />
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100 service-card">
-          <div class="card-body">
-            <i class="fas fa-building fa-3x mb-3 text-primary"></i>
-            <h5 class="card-title">Structural Design</h5>
-            <p class="card-text">Design and analysis of strong, durable structures for both residential and industrial purposes.</p>
-            <a href="services.html#structural" class="btn btn-outline-primary mt-2">Learn More</a>
+    </section>
+
+    <!-- Our Core Services Section -->
+    <section class="py-5 bg" id="services">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-4">Our Core Services</h2>
+        <div class="row g-3">
+          <!-- Repeat this block for each service -->
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-road text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Road Design</h6>
+              <p class="small text-muted mb-2">
+                Efficient layout and planning of roads.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-ruler-combined text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Road Survey</h6>
+              <p class="small text-muted mb-2">
+                Topographic and route alignment surveys.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-tools text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Road Construction</h6>
+              <p class="small text-muted mb-2">
+                Complete construction of quality roads.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-water text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Culvert Construction</h6>
+              <p class="small text-muted mb-2">
+                Safe and efficient water passage solutions.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-shower text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Drain Construction</h6>
+              <p class="small text-muted mb-2">
+                Structured drains to control floodwaters.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-mountain text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Erosion Control</h6>
+              <p class="small text-muted mb-2">
+                Preventing and managing land erosion.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-drafting-compass text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Drain Profiling</h6>
+              <p class="small text-muted mb-2">
+                Design and data generation for drain works.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-users text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Site Supervision</h6>
+              <p class="small text-muted mb-2">
+                On-site oversight by expert engineers.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-bridge text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Bridge Construction</h6>
+              <p class="small text-muted mb-2">
+                Durable bridges for all terrains.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-money-check-alt text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Project Costing</h6>
+              <p class="small text-muted mb-2">
+                Detailed cost evaluations and analysis.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-certificate text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Certificate Prep</h6>
+              <p class="small text-muted mb-2">
+                Official documentation and approvals.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+            <div class="card p-3 h-100 service-card text-center">
+              <i class="fas fa-tractor text-success fs-4 mb-2"></i>
+              <h6 class="fw-semibold mb-1">Land Reclamation</h6>
+              <p class="small text-muted mb-2">
+                Restoring land for development use.
+              </p>
+              <a href="services.html" class="btn btn-sm btn-outline-success"
+                >Learn More</a
+              >
+            </div>
+          </div>
+
+          
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100 service-card">
-          <div class="card-body">
-            <i class="fas fa-cogs fa-3x mb-3 text-primary"></i>
-            <h5 class="card-title">Mechanical Systems</h5>
-            <p class="card-text">Mechanical installation, HVAC systems, and precision engineering for industrial needs.</p>
-            <a href="services.html#mechanical" class="btn btn-outline-primary mt-2">Learn More</a>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="py-5" id="projects">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5">Featured Projects</h2>
+        <div class="row g-4">
+          <!-- Project 1 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm project-card h-100">
+              <img
+                src="images/projects 3.jpg"
+                class="card-img-top"
+                alt="Project 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Urban Road Rehabilitation – Lagos</h5>
+                <p class="card-text">
+                  10km road reconstruction with drainage and sidewalks.
+                </p>
+                <a
+                  href="projects.html"
+                  class="btn btn-sm btn-outline-success mt-2"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm project-card h-100">
+              <img
+                src="images/projects 2.jpg"
+                class="card-img-top"
+                alt="Project 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Drainage Network – Ughelli</h5>
+                <p class="card-text">
+                  300m concrete drain to control erosion and improve flow.
+                </p>
+                <a
+                  href="projects.html"
+                  class="btn btn-sm btn-outline-success mt-2"
+                  >View Project</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm project-card h-100">
+              <img
+                src="images/projects.jpg"
+                class="card-img-top"
+                alt="Project 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Street Lighting – Delta State</h5>
+                <p class="card-text">
+                  Solar street lights installed across 2 major communities.
+                </p>
+                <a
+                  href="projects.html"
+                  class="btn btn-sm btn-outline-success mt-2"
+                  >View Project</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- Footer Section -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+      <div class="container">
+        <div class="row">
+          <!-- Company Info -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold">ISAAC ENGINEERING LIMITED</h5>
+            <p>
+              No2 St. Lawrence Street, Ovwor, Ughelli South, Delta State.<br />
+              Phone:
+              <a href="tel:08151450371" class="text-success">08151450371</a>
+            </p>
+          </div>
 
-<!-- Featured Projects Section -->
-<section id="projects" class="py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5">Featured Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8a6" class="card-img-top" alt="Project 1">
-          <div class="card-body">
-            <h5 class="card-title">Urban Road Rehabilitation – Lagos</h5>
-            <p class="card-text">We designed and rebuilt a 10km urban road network including drainage and pedestrian walkways.</p>
-            <a href="projects.html#lagos-road" class="btn btn-link text-primary">View Project</a>
+          <!-- Navigation Links -->
+          <div class="col-md-4 mb-4">
+            <h6 class="fw-bold">Quick Links</h6>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#home" class="text-light text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#services" class="text-light text-decoration-none"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="text-light text-decoration-none"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-light text-decoration-none"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Links -->
+          <div class="col-md-4 mb-4">
+            <h6 class="fw-bold">Connect with Us</h6>
+            <a href="#" class="text-light me-3 fs-5"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="#" class="text-light me-3 fs-5"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="text-light me-3 fs-5"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" class="text-light me-3 fs-5"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="mailto:info@isaacengineering.com" class="text-light fs-5"
+              ><i class="fas fa-envelope"></i
+            ></a>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" class="card-img-top" alt="Project 2">
-          <div class="card-body">
-            <h5 class="card-title">Industrial Warehouse Structure – Abuja</h5>
-            <p class="card-text">We delivered a state-of-the-art warehouse structure with reinforced steel trusses and climate control.</p>
-            <a href="projects.html#abuja-warehouse" class="btn btn-link text-primary">View Project</a>
-          </div>
+
+        <div class="text-center mt-4">
+          <small
+            >&copy; <span id="currentYear"></span> ISAAC ENGINEERING LIMITED.
+            All Rights Reserved.</small
+          >
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card shadow h-100">
-          <img src="https://images.unsplash.com/photo-1570129477494-e64d7b3f9b96" class="card-img-top" alt="Project 3">
-          <div class="card-body">
-            <h5 class="card-title">HVAC Installation – FMC Port Harcourt</h5>
-            <p class="card-text">Mechanical HVAC system installation in a large medical complex with precision air handling units.</p>
-            <a href="projects.html#ph-hvac" class="btn btn-link text-primary">View Project</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
+    <!-- Bootstrap JS -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
 
-<!-- Testimonials -->
-<section class="bg-light py-5">
-  <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-5">What Our Clients Say</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="p-4 shadow rounded bg-white">
-          <p>"Reliable, professional, and always on time. SolidBuild delivered more than we imagined."</p>
-          <strong>— Olivia A., Real Estate Developer</strong>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 shadow rounded bg-white">
-          <p>"Their attention to structural detail is unmatched. We've worked with them on three major projects."</p>
-          <strong>— Engr. Tunde O., City Planner</strong>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="p-4 shadow rounded bg-white">
-          <p>"Professionalism meets innovation. They're our go-to for mechanical systems."</p>
-          <strong>— Clara M., Factory Ops Manager</strong>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <script>
+      // Auto-update the footer year
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
 
-<!-- Contact Section -->
-<section id="contact" class="py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-4">Let's Build Together</h2>
-    <form class="row g-3" action="#" method="POST">
-      <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Your Name" name="name" required>
-      </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Email Address" name="email" required>
-      </div>
-      <div class="col-12">
-        <textarea class="form-control" rows="4" placeholder="Your Message..." name="message" required></textarea>
-      </div>
-      <div class="col-12 text-center">
-        <button type="submit" class="btn btn-dark px-5">Send Message</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-dark text-white pt-5 pb-3">
-  <div class="container">
-    <div class="row text-center text-md-start">
-      <div class="col-md-4 mb-3">
-        <h5 class="fw-bold">SolidBuild Engineering</h5>
-        <p>Innovative engineering solutions tailored for growth, sustainability, and long-term value.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h6 class="fw-bold">Quick Links</h6>
-        <ul class="list-unstyled">
-          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-          <li><a href="services.html" class="text-white text-decoration-none">Services</a></li>
-          <li><a href="projects.html" class="text-white text-decoration-none">Projects</a></li>
-          <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-md-4 mb-3">
-        <h6 class="fw-bold">Follow Us</h6>
-        <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
-        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
-        <a href="#" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
-      </div>
-    </div>
-    <hr class="bg-light"/>
-    <p class="text-center mb-0">&copy; 2025 SolidBuild Engineering. All rights reserved.</p>
-  </div>
-</footer>
-
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
