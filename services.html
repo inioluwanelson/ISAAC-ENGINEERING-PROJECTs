@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISAK ENGINEERING LIMITED</title>
+    <title>SERVICES</title>
 
     <!-- Bootstrap & FontAwesome -->
     <link
@@ -37,7 +37,7 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         color: white;
       }
-      /* Nav underline animation */
+
       .nav-underline {
         position: relative;
         display: inline-block;
@@ -60,7 +60,6 @@
         width: 100%;
       }
 
-      /* Glow button on hover */
       .btn-green-glow {
         background-color: #28a745;
         color: white;
@@ -73,12 +72,13 @@
         box-shadow: 0 0 12px rgba(40, 167, 69, 0.6);
         color: white;
       }
-      #services{
+
+      #services {
         margin-top: 100px;
       }
 
       #services h2 {
-        color: #008000; /* Bright green (ISAK color) */
+        color: #008000;
       }
 
       #services h5 {
@@ -93,7 +93,32 @@
       }
 
       hr {
-        border-top: 3px solid #004d40; /* ISAK’s deep teal shade */
+        border-top: 3px solid #004d40;
+      }
+
+      .img-small {
+        max-width: 60%;
+        height: auto;
+      }
+
+      .img-edge {
+        display: block;
+        margin-left: -10px;
+        margin-right: auto;
+      }
+      #images{
+        max-width: 90%;
+      }
+
+      @media (max-width: 768px) {
+        .img-small {
+          max-width: 100%;
+        }
+
+        .img-edge {
+          margin: 0 auto;
+          display: block;
+        }
       }
 
       footer {
@@ -113,23 +138,13 @@
     </style>
   </head>
   <body>
-    <!-- Sticky Responsive Navbar with Animation -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
-    >
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
       <div class="container">
-        <!-- Logo & Business Name -->
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img
-            src="images/isak project logo.jpeg"
-            alt="logo"
-            height="40"
-            class="me-2"
-          />
+          <img src="images/isak project logo.jpeg" alt="logo" height="40" class="me-2" />
           <span class="fw-bold fs-6">ISAK ENGINEERING LIMITED</span>
         </a>
-
-        <!-- Hamburger Toggle -->
         <button
           class="navbar-toggler"
           type="button"
@@ -138,54 +153,44 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link nav-underline" href="#about">About</a>
+              <a class="nav-link nav-underline" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link nav-underline" href="services.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-underline" href="#projects">Projects</a>
+              <a class="nav-link nav-underline" href="projects.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-underline" href="#contact">Contact</a>
+              <a class="nav-link nav-underline" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Services Page -->
+    <!-- Services Section -->
     <section class="py-5" id="services">
       <div class="container">
-        <!-- Section Header -->
         <div class="text-center mb-5">
           <h2 class="fw-bold text-success">Our Services</h2>
           <h5 class="text-muted">ENGINEERING SERVICES</h5>
-          <hr
-            class="mx-auto"
-            style="width: 80px; border-top: 3px solid #004d40"
-          />
+          <hr class="mx-auto" style="width: 80px; border-top: 3px solid #004d40" />
         </div>
 
-        <!-- Grid Layout -->
+        <!-- First Row -->
         <div class="row align-items-center mb-5">
-          <!-- Image Section -->
-          <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="col-lg-6 pe-lg-0">
             <img
-              src="images/blueprint.jpg"
-              alt="Engineering Blueprint"
-              class="img-fluid rounded shadow"
-              style="max-width: 70%"
+              src="images/survey.jpeg"
+              class="img-fluid rounded shadow img-small img-edge"
+              alt="Engineering Image"
             />
           </div>
-
-          <!-- Text Section -->
-          <div class="col-lg-6">
+          <div class="col-lg-6 ps-lg-4">
             <p class="text-muted">
               ISAK ENGINEERING LIMITED provides a multi-disciplinary design and
               construction service to complement our wide range of consultancy
@@ -198,7 +203,7 @@
               <div class="col-md-6">
                 <ul class="list-unstyled">
                   <li>✔ Road Design</li>
-                  <li>✔ Road Survey</li>
+                  <li>✔ Engineering Survey</li>
                   <li>✔ Road Construction</li>
                   <li>✔ Culvert Construction</li>
                   <li>✔ Drain Construction</li>
@@ -220,17 +225,17 @@
           </div>
         </div>
 
-        <!-- Optional Second Row -->
-        <div class="row align-items-center flex-lg-row-reverse">
-          <div class="col-lg-6 mb-4 mb-lg-0">
+        <!-- Second Row -->
+        <div class="row align-items-center flex-lg-row-reverse mt-5">
+          <div class="col-lg-6 pe-lg-0">
             <img
-              src="images/tool.jpg"
-              alt="Construction Tools"
-              class="img-fluid rounded shadow"
-              style="max-width: 70%" 
+              src="images/IMG_1717(1).JPG"
+              class="img-fluid rounded shadow img-small img-edge"
+              alt="Engineering Image"
+              id="images"
             />
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 ps-lg-4">
             <p class="text-muted">
               From concept to completion, we partner with clients to deliver
               cost-effective, sustainable solutions that exceed expectations and
@@ -270,20 +275,20 @@
             <h6 class="fw-bold">Quick Links</h6>
             <ul class="list-unstyled">
               <li>
-                <a href="#home" class="text-light text-decoration-none">Home</a>
+                <a href="index.html" class="text-light text-decoration-none">Home</a>
               </li>
               <li>
-                <a href="#services" class="text-light text-decoration-none"
+                <a href="services.html" class="text-light text-decoration-none"
                   >Services</a
                 >
               </li>
               <li>
-                <a href="#projects" class="text-light text-decoration-none"
+                <a href="projects.html" class="text-light text-decoration-none"
                   >Projects</a
                 >
               </li>
               <li>
-                <a href="#contact" class="text-light text-decoration-none"
+                <a href="contact.html" class="text-light text-decoration-none"
                   >Contact</a
                 >
               </li>
