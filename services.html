@@ -106,7 +106,7 @@
         margin-left: -10px;
         margin-right: auto;
       }
-      #images{
+      #images {
         max-width: 90%;
       }
 
@@ -135,14 +135,34 @@
       footer a:hover {
         color: #28a745;
       }
+      .btn-whatsapp {
+        background-color: #25d366;
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-whatsapp:hover {
+        background-color: #1ebe57;
+        color: white;
+      }
     </style>
   </head>
   <body>
     <!-- Sticky Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top"
+    >
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="images/isak project logo.jpeg" alt="logo" height="40" class="me-2" />
+          <img
+            src="images/isak project logo.jpeg"
+            alt="logo"
+            height="40"
+            class="me-2"
+          />
           <span class="fw-bold fs-6">ISAK ENGINEERING LIMITED</span>
         </a>
         <button
@@ -159,10 +179,14 @@
               <a class="nav-link nav-underline" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-underline" href="services.html">Services</a>
+              <a class="nav-link nav-underline" href="services.html"
+                >Services</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link nav-underline" href="projects.html">Projects</a>
+              <a class="nav-link nav-underline" href="projects.html"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link nav-underline" href="contact.html">Contact</a>
@@ -178,7 +202,10 @@
         <div class="text-center mb-5">
           <h2 class="fw-bold text-success">Our Services</h2>
           <h5 class="text-muted">ENGINEERING SERVICES</h5>
-          <hr class="mx-auto" style="width: 80px; border-top: 3px solid #004d40" />
+          <hr
+            class="mx-auto"
+            style="width: 80px; border-top: 3px solid #004d40"
+          />
         </div>
 
         <!-- First Row -->
@@ -248,7 +275,10 @@
               </li>
               <li>
                 <strong>Phone:</strong>
-                <a href="tel:08151450371" class="text-success">08151450371</a>
+                <a href="tel:08151450371" class="text-success d-block">08151450371</a>
+               <a href="https://wa.me/2348151450371" target="_blank" class="text-success d-block">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
               </li>
             </ul>
           </div>
@@ -266,7 +296,10 @@
             <p>
               No2 St. Lawrence Street, Ovwor, Ughelli South, Delta State.<br />
               Phone:
-              <a href="tel:08151450371" class="text-success">08151450371</a>
+              <a href="tel:08151450371" class="text-success d-block">08151450371</a>
+               <a href="https://wa.me/2348151450371" target="_blank" class="text-success d-block">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
             </p>
           </div>
 
@@ -275,7 +308,9 @@
             <h6 class="fw-bold">Quick Links</h6>
             <ul class="list-unstyled">
               <li>
-                <a href="index.html" class="text-light text-decoration-none">Home</a>
+                <a href="index.html" class="text-light text-decoration-none"
+                  >Home</a
+                >
               </li>
               <li>
                 <a href="services.html" class="text-light text-decoration-none"
@@ -318,8 +353,8 @@
 
         <div class="text-center mt-4">
           <small
-            >&copy; <span id="currentYear"></span> ISAK ENGINEERING LIMITED.
-            All Rights Reserved.</small
+            >&copy; <span id="currentYear"></span> ISAK ENGINEERING LIMITED. All
+            Rights Reserved.</small
           >
         </div>
       </div>
